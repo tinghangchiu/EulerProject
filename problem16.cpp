@@ -11,35 +11,40 @@ int main(){
 	int index = 0;
 	int product = 0;
 	int carry = 0;
+	int j;
 	
 	for(int i=0;i<1000;i++){
-		for(int j=0;j<=index;j++){
-			product = (ary[0]+carry)*2;
+		carry=0;
+		for(j=0;j<=index;j++){
+			product = ary[j]*2+carry;
+			//printf("%d: %d\n",ary[0],carry);
 			if(product>=10){
 				carry=1;
-				ary[j]=product%10;
-				index++;
+				ary[j]=product%10;		
 			}
 			else{
 				carry=0;
 				ary[j]=product;
 			}
-			if(j==index && carry ==1){
-				ary[index+1] = ary[index+1] + 1;
-			}
-			
 			//printf("%d\n",j);
-		} 
-		
-		
+		} 	
+			if(j==index+1 && carry ==1){
+				ary[index+1] = ary[index+1]+1;
+				index++;
+			}
 		
 		
 	}
 	
 	
 	
-	for(int i=index+1;i>=0;i--){
+	
+	
+	int count=0;
+	for(int i=301;i>=0;i--){
 		printf("%d",ary[i]);
+		count = count + ary[i];
 }
+	printf("\n %d",count);
 	return 0;
 } 

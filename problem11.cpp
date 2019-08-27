@@ -16,6 +16,7 @@ int main(){
 	
 	while(count<400 ){ //fscanf will auto ignore '\n' and " " and need to count how many item is inserted which unable to read eof
 	//fscanf (fs, "%d", &ch) != EOF can be used but the first number will be missed . To solve this, use do and while loop
+	//fscanf() returns the number of items successfully scanned
 	fscanf (fs, "%d", &age);//fscanf use space to descriminate end of number
 	//ch = getw(fs);
 	//printf("%d\n",age);
